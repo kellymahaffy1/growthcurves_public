@@ -9,7 +9,7 @@ Code and data to reproduce figures and analyses in Donnelly, Huber and Yeatman (
 ## To reproduce figures
 - Clone git repo
 ~~~~
-git clone https://github.com/yeatmanlab/growthcurves.git
+git clone https://github.com/yeatmanlab/growthcurves_public.git
 ~~~~
 - Change into directory
 ~~~~
@@ -17,7 +17,7 @@ cd ~/git/growthcurves
 ~~~~
 - Add directory and subdirectories to search path
 ~~~~
-addpath(genpath('~/git/growthcurves'))
+addpath(genpath('~/git/growthcurves_public'))
 ~~~~
 - Run the following functions:
 ~~~~
