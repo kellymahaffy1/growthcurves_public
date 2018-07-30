@@ -118,9 +118,6 @@ for test = 1:length(names)
     if stats(test).lme_quad.Coefficients.pValue(3) <= 0.001
         text(test, quad_data.growth(test) + quad_data.se(test) + .00002, ...
             '**', 'HorizontalAlignment', 'center', 'Color', 'b');
-    elseif stats(test).lme_quad.Coefficients.pValue(3) <= 0.05
-        text(test,quad_data.growth(test) + quad_data.se(test) + .00002, ...
-            '*', 'HorizontalAlignment', 'center', 'Color', 'b');
     end
 end
 % Format
