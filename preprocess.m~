@@ -12,8 +12,8 @@
 % Patrick Donnelly; University of Washington; July 30th, 2018
 %% Read in files
 % Make sure your present working directory is the Donnelly_18 repo
-lmb_data = readtable('/growthcurves/frontiers_revision/data/lmb_data.xlsx');
-sub_map = mapparse('/growthcurves/frontiers_revision/data/lmb_config.xlsx'); %mapparse initialized container map object
+lmb_data = readtable('data/lmb_data.xlsx');
+sub_map = mapparse('data/lmb_config.xlsx'); %mapparse initialized container map object
 %% condense data table to necessary information
 int_group = sub_map('int_include'); % intervention group
 cntrl_group = sub_map('cntrl_dx'); % dx control group
@@ -24,7 +24,7 @@ int_data = lmb_data(indx,:);
 cntrl_data = lmb_data(cntrl_indx,:);
 all_data = lmb_data(all_indx,:);
 %% Select sessions of interest
-cntrl_sess_names = [0 11 12 13 14]; % based on study name variable coding in redcap
+cntrl_sess_names = [11 12 13 14]; % based on study name variable coding in redcap
 int_sess_names = [0 1 2 3 4];
 all_sess_names = [1 2 3 4 11 12 13 14];
 case_cntrl_sess_names = [1 2 3 4 11 12 13 14];
@@ -72,9 +72,6 @@ int_data(temp(1), :) = [];
 temp = find(ismember(int_data.record_id, 84));
 int_data(temp(1), :) = [];
 
-%%revise control data
-cntrl_sess_name_indx = ismember(cntrl_data.study_name,cntrl_sess_names);
-cntrl_data = cntrl_data(cntrl_sess_name_indx, :);
 
 %% Perform LME model fit
 % center the time variables and append to table
