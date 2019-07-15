@@ -9,11 +9,12 @@
 % map object for grouping data by subject groups); center (a function for
 % demeaning variables, for use in the linear mixed effects model; ifsig (a
 % function that codes plotted data based on significance)
-% Patrick Donnelly; University of Washington; July 30th, 2018
+% Patrick Donnelly; University of Washington; July 14th, 2019
+addpath(genpath('helper/'))
 %% Read in files
 % Make sure your present working directory is the Donnelly_18 repo
-lmb_data = readtable('/growthcurves/frontiers_revision/data/lmb_data.xlsx');
-sub_map = mapparse('/growthcurves/frontiers_revision/data/lmb_config.xlsx'); %mapparse initialized container map object
+lmb_data = readtable('data/lmb_data.xlsx');
+sub_map = mapparse('data/lmb_config.xlsx'); %mapparse initialized container map object
 %% condense data table to necessary information
 int_group = sub_map('int_include'); % intervention group
 cntrl_group = sub_map('cntrl_dx'); % dx control group
