@@ -19,11 +19,12 @@ cd ~/git/growthcurves
 ~~~~
 addpath(genpath('~/git/growthcurves_public'))
 ~~~~
-- Run the following functions:
+- Run the following functions, in order:
 ~~~~
 preprocess.m
 figure2.m
 supp_fig1.m
 supp_fig2.m
+supp_fig3.m
 ~~~~
 
